@@ -6,7 +6,8 @@ const nextButton = document.querySelector('button');
 const caughtSpan = document.querySelector('#caught-span');
 const images = document.querySelectorAll('label > img');
 const nextDiv = document.querySelector('#next');
-// const encounteredSpan = document.querySelectorAll('label > span');
+const encounteredSpan = document.querySelectorAll('label > p');
+const caughtDiv = document.querySelectorAll('label > div');
 
 let caughtPokemon = [];
 let pokemonCaught = 0;
@@ -98,12 +99,21 @@ function setupGame() {
 
     radioButtons[0].value = pokemon1.id;
     images[0].src = pokemon1.url_image;
+    const spanmon1 = findById(caughtPokemon, pokemon1.id);
+    caughtDiv[0].textContent = `You've caught ${spanmon1.name} ${spanmon1.caught} times`;
+    encounteredSpan[0].textContent = `You've seen ${spanmon1.name} ${spanmon1.encountered} times`;
     radioButtons[1].value = pokemon2.id;
+    const spanmon2 = findById(caughtPokemon, pokemon2.id);
+    caughtDiv[1].textContent = `You've caught ${spanmon2.name} ${spanmon2.caught} times`;
 
+    encounteredSpan[1].textContent = `You've seen ${spanmon2.name} ${spanmon2.encountered} times`;
     images[1].src = pokemon2.url_image;
 
     radioButtons[2].value = pokemon3.id;
+    const spanmon3 = findById(caughtPokemon, pokemon1.id);
+    caughtDiv[2].textContent = `You've caught ${spanmon3.name} ${spanmon3.caught} times`;
 
+    encounteredSpan[2].textContent = `You've seen ${spanmon3.name} ${spanmon3.encountered} times`;
     images[2].src = pokemon3.url_image;
 
 
