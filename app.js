@@ -8,8 +8,8 @@ const images = document.querySelectorAll('label > img');
 const nextDiv = document.querySelector('#next');
 // const encounteredSpan = document.querySelectorAll('label > span');
 
-export let caughtPokemon = [];
-export let pokemonCaught = 0;
+let caughtPokemon = [];
+let pokemonCaught = 0;
 
 
 
@@ -147,4 +147,3 @@ nextButton.addEventListener('click', () => {
     }
 });
 
-console.log(caughtPokemon)

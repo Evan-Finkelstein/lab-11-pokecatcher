@@ -1,1 +1,3 @@
 # lab-11-pokecatcher
+
+We didnt make a wire frame because the html elements were so straight forward. Our our planning was more about the javascrips. The first thing we did was get all of our HTML elements into javascript. Then we had to create out DOM elements and randomize the pokemon displayed. The next step was capturing the pokemon displayed into an array so that we could track the times encountered. Next we added an event listener to the radion buttons to record the caught pokemon. Finally we are going to add an event listener to the 'next' button.
