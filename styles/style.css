@@ -114,5 +114,9 @@ label > input {
     display: none;
 }
 :checked + img {
-    border: solid 10px lightskyblue;
+    border: solid 10px rgb(218, 45, 23);
 }   
+
+.hidden{
+    display: none;
+}
