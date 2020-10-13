@@ -110,7 +110,7 @@ function setupGame() {
     images[1].src = pokemon2.url_image;
 
     radioButtons[2].value = pokemon3.id;
-    const spanmon3 = findById(caughtPokemon, pokemon1.id);
+    const spanmon3 = findById(caughtPokemon, pokemon3.id);
     caughtDiv[2].textContent = `You've caught ${spanmon3.name} ${spanmon3.caught} times`;
 
     encounteredSpan[2].textContent = `You've seen ${spanmon3.name} ${spanmon3.encountered} times`;
