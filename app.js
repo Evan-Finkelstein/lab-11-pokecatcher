@@ -1,22 +1,17 @@
 import { rawPokeData } from './pokemon.js';
-// import { findById } from './utils.js';
+import { findById } from './utils.js';
 
 const radioButtons = document.querySelectorAll('input');
 const nextButton = document.querySelector('button');
 const caughtSpan = document.querySelector('#caught-span');
 const images = document.querySelectorAll('label > img');
 const nextDiv = document.querySelector('#next');
+// const encounteredSpan = document.querySelectorAll('label > span');
 
 export let caughtPokemon = [];
 export let pokemonCaught = 0;
 
-function findById(someArray, someId) {
-    for (const booger of someArray) {
-        if (booger.id === someId) {
-            return booger;
-        }
-    }
-}
+
 
 
 function getRandomPokemon(array) {
@@ -28,11 +23,7 @@ function getRandomPokemon(array) {
 
 
 function setupGame() {
-    if (pokemonCaught === 10) {
-        const stringyMon = JSON.stringify(caughtPokemon);
-        localStorage.setItem('POKEMON', stringyMon);
-        window.location.href = './results-page/index.html';
-    }
+
 
     nextDiv.classList.add('hidden');
 
@@ -99,22 +90,20 @@ function setupGame() {
         caughtPokemon.push(allPokemon3);
     } else {
         poke3.encountered++;
-    };
+    }
 
 
 
-    console.log(caughtPokemon)
+
 
     radioButtons[0].value = pokemon1.id;
-    // radioButtons[0].id = pokemon1.id
     images[0].src = pokemon1.url_image;
-
     radioButtons[1].value = pokemon2.id;
-    // radioButtons[1].id = pokemon2.id
+
     images[1].src = pokemon2.url_image;
 
     radioButtons[2].value = pokemon3.id;
-    // radioButtons[2].id = pokemon3.id
+
     images[2].src = pokemon3.url_image;
 
 
@@ -132,21 +121,14 @@ for (let i = 0; i < radioButtons.length; i++) {
         for (let i = 0; i < radioButtons.length; i++) {
             radioButtons[i].disabled = true;
             images[i].style.opacity = .5;
-            
-        } 
-        const pokemonPicked = e.target.value;
-        // const poke = {
-        //     id: pokemonPicked,
-        //     caught: 0,
-        // };
-       
-        const pokester = findById(caughtPokemon, Number(pokemonPicked));
-        console.log(pokemonPicked);
-        pokester.caught++;
-    //  
-    }
 
-    
+        }
+        const pokemonPicked = e.target.value;
+
+
+        const pokester = findById(caughtPokemon, Number(pokemonPicked));
+        pokester.caught++;
+    }
     );
 }
 
@@ -155,7 +137,14 @@ for (let i = 0; i < radioButtons.length; i++) {
 setupGame();
 
 nextButton.addEventListener('click', () => {
-    setupGame();
+
+    if (pokemonCaught === 10) {
+        const stringyMon = JSON.stringify(caughtPokemon);
+        localStorage.setItem('POKEMON', stringyMon);
+        window.location.href = './results-page/index.html';
+    } else {
+        setupGame();
+    }
 });
 
 console.log(caughtPokemon)

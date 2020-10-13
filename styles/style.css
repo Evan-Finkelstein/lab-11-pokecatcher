@@ -28,7 +28,7 @@ body {
     background-color: var(--color2);
 }
 
-main {
+main{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -50,14 +50,19 @@ section {
     margin-bottom: var(--gutter);
     border: solid 2px var(--color1);
 }
+h1{
+    justify-content: center;
+    text-align: center;
 
+}
 header {
-    display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
-}
+    text-align: center;
+    align-content: center;
+} 
 
 footer {
     display: flex;
@@ -70,6 +75,7 @@ footer {
 h2 {
     font-size: 1.8rem;
     font-weight: bold;
+    margin-top: 20px;
 }
 
 .gutter-right {
@@ -80,9 +86,6 @@ h2 {
     animation: pulse 5s infinite ease-in-out;
 }
 
-header img {
-    height: var(--header-height);
-}
 
 
 
@@ -120,3 +123,7 @@ label > input {
 .hidden{
     display: none;
 }
+canvas {
+    width: 75%;
+    height: 500px;
+  }
