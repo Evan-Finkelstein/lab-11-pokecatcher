@@ -74,7 +74,7 @@ function setupGame() {
     // };
     const poke1 = findById(caughtPokemon, pokemon1.id);
     if (poke1 === undefined) {
-        pokemon1.encountered = 0;
+        pokemon1.encountered = 1;
         pokemon1.caught = 0;
         caughtPokemon.push(pokemon1);
     } else {
@@ -83,7 +83,7 @@ function setupGame() {
 
     const poke2 = findById(caughtPokemon, pokemon2.id);
     if (poke2 === undefined) {
-        pokemon2.encountered = 0;
+        pokemon2.encountered = 1;
         pokemon2.caught = 0;
         caughtPokemon.push(pokemon2);
     } else {
@@ -92,7 +92,7 @@ function setupGame() {
 
     const poke3 = findById(caughtPokemon, pokemon3.id);
     if (poke3 === undefined) {
-        pokemon3.encountered = 0;
+        pokemon3.encountered = 1;
         pokemon3.caught = 0;
         caughtPokemon.push(pokemon3);
     } else {

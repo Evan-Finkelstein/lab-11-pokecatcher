@@ -54,7 +54,6 @@ const borders = [
 new Chart(ctx, {
     type: 'bar',
     data: {
-        // labels: labels,
         labels,
         datasets: [{
             label: '# of Pokemo Caught',
