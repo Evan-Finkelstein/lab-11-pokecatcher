@@ -12,7 +12,7 @@ for (let i = 0; i < pokeData.length; i++) {
     const cartItem = pokeData[i];
 
     pokemonNumbers.push(cartItem.caught);
-    labels.push(cartItem.name);
+    labels.push(cartItem.pokemon);
     pokemonEncounters.push(cartItem.encountered);
 }
 
