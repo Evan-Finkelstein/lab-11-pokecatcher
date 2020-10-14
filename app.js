@@ -37,9 +37,9 @@ function setupGame() {
 
 
 
-    let pokemon1 = getRandomPokemon(rawPokeData)
-    let pokemon2 = getRandomPokemon(rawPokeData)
-    let pokemon3 = getRandomPokemon(rawPokeData)
+    let pokemon1 = getRandomPokemon(rawPokeData);
+    let pokemon2 = getRandomPokemon(rawPokeData);
+    let pokemon3 = getRandomPokemon(rawPokeData);
 
 
 
@@ -53,42 +53,48 @@ function setupGame() {
     while (pokemon3.id === pokemon1.id) {
         pokemon3 = getRandomPokemon(rawPokeData);
     }
-    let allPokemon1 = {
-        name: pokemon1.pokemon,
-        id: pokemon1.id,
-        encountered: 1,
-        caught: 0,
-    };
-    let allPokemon2 = {
-        name: pokemon2.pokemon,
-        id: pokemon2.id,
-        encountered: 1,
-        caught: 0,
-    };
-    let allPokemon3 = {
-        name: pokemon3.pokemon,
-        id: pokemon3.id,
-        encountered: 1,
-        caught: 0,
+    // let allPokemon1 = {
+    //     name: pokemon1.pokemon,
+    //     id: pokemon1.id,
+    //     encountered: 1,
+    //     caught: 0,
+    // };
+    // let allPokemon2 = {
+    //     name: pokemon2.pokemon,
+    //     id: pokemon2.id,
+    //     encountered: 1,
+    //     caught: 0,
+    // };
+    // let allPokemon3 = {
+    //     name: pokemon3.pokemon,
+    //     id: pokemon3.id,
+    //     encountered: 1,
+    //     caught: 0,
 
-    };
-    const poke1 = findById(caughtPokemon, allPokemon1.id)
+    // };
+    const poke1 = findById(caughtPokemon, pokemon1.id);
     if (poke1 === undefined) {
-        caughtPokemon.push(allPokemon1);
+        pokemon1.encountered = 0;
+        pokemon1.caught = 0;
+        caughtPokemon.push(pokemon1);
     } else {
         poke1.encountered++;
     }
 
-    const poke2 = findById(caughtPokemon, allPokemon2.id)
+    const poke2 = findById(caughtPokemon, pokemon2.id);
     if (poke2 === undefined) {
-        caughtPokemon.push(allPokemon2);
+        pokemon2.encountered = 0;
+        pokemon2.caught = 0;
+        caughtPokemon.push(pokemon2);
     } else {
         poke2.encountered++;
     }
 
-    const poke3 = findById(caughtPokemon, allPokemon3.id)
+    const poke3 = findById(caughtPokemon, pokemon3.id);
     if (poke3 === undefined) {
-        caughtPokemon.push(allPokemon3);
+        pokemon3.encountered = 0;
+        pokemon3.caught = 0;
+        caughtPokemon.push(pokemon3);
     } else {
         poke3.encountered++;
     }
@@ -99,21 +105,21 @@ function setupGame() {
 
     radioButtons[0].value = pokemon1.id;
     images[0].src = pokemon1.url_image;
-    const spanmon1 = findById(caughtPokemon, pokemon1.id);
-    caughtDiv[0].textContent = `You've caught ${spanmon1.name} ${spanmon1.caught} times`;
-    encounteredSpan[0].textContent = `You've seen ${spanmon1.name} ${spanmon1.encountered} times`;
+    // const spanmon1 = findById(caughtPokemon, pokemon1.id);
+    caughtDiv[0].textContent = `You've caught ${pokemon1.pokemon} ${pokemon1.caught} times`;
+    encounteredSpan[0].textContent = `You've seen ${pokemon1.pokemon} ${pokemon1.encountered} times`;
     radioButtons[1].value = pokemon2.id;
-    const spanmon2 = findById(caughtPokemon, pokemon2.id);
-    caughtDiv[1].textContent = `You've caught ${spanmon2.name} ${spanmon2.caught} times`;
+    // const spanmon2 = findById(caughtPokemon, pokemon2.id);
+    caughtDiv[1].textContent = `You've caught ${pokemon2.pokemon} ${pokemon2.caught} times`;
 
-    encounteredSpan[1].textContent = `You've seen ${spanmon2.name} ${spanmon2.encountered} times`;
+    encounteredSpan[1].textContent = `You've seen ${pokemon2.pokemon} ${pokemon2.encountered} times`;
     images[1].src = pokemon2.url_image;
 
     radioButtons[2].value = pokemon3.id;
-    const spanmon3 = findById(caughtPokemon, pokemon3.id);
-    caughtDiv[2].textContent = `You've caught ${spanmon3.name} ${spanmon3.caught} times`;
+    // const spanmon3 = findById(caughtPokemon, pokemon3.id);
+    caughtDiv[2].textContent = `You've caught ${pokemon3.pokemon} ${pokemon3.caught} times`;
 
-    encounteredSpan[2].textContent = `You've seen ${spanmon3.name} ${spanmon3.encountered} times`;
+    encounteredSpan[2].textContent = `You've seen ${pokemon3.pokemon} ${pokemon3.encountered} times`;
     images[2].src = pokemon3.url_image;
 
 
@@ -138,6 +144,7 @@ for (let i = 0; i < radioButtons.length; i++) {
 
         const pokester = findById(caughtPokemon, Number(pokemonPicked));
         pokester.caught++;
+        console.log(pokester);
     }
     );
 }
