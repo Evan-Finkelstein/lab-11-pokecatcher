@@ -72,32 +72,48 @@ function setupGame() {
     //     caught: 0,
 
     // };
-    const poke1 = findById(caughtPokemon, pokemon1.id);
-    if (poke1 === undefined) {
-        pokemon1.encountered = 1;
-        pokemon1.caught = 0;
-        caughtPokemon.push(pokemon1);
-    } else {
-        poke1.encountered++;
+
+    let pokeArray = [pokemon1, pokemon2, pokemon3];
+
+
+    for (let i = 0; i < pokeArray.length; i++) {
+        let poket = pokeArray[i];
+        const poket1 = findById(caughtPokemon, poket.id);
+        if (poket1 === undefined) {
+            poket.encountered = 1;
+            poket.caught = 0;
+            caughtPokemon.push(poket);
+        } else {
+            poket.encountered++;
+        }
     }
 
-    const poke2 = findById(caughtPokemon, pokemon2.id);
-    if (poke2 === undefined) {
-        pokemon2.encountered = 1;
-        pokemon2.caught = 0;
-        caughtPokemon.push(pokemon2);
-    } else {
-        poke2.encountered++;
-    }
+    // const poke1 = findById(caughtPokemon, pokemon1.id);
+    // if (poke1 === undefined) {
+    //     pokemon1.encountered = 1;
+    //     pokemon1.caught = 0;
+    //     caughtPokemon.push(pokemon1);
+    // } else {
+    //     poke1.encountered++;
+    // }
 
-    const poke3 = findById(caughtPokemon, pokemon3.id);
-    if (poke3 === undefined) {
-        pokemon3.encountered = 1;
-        pokemon3.caught = 0;
-        caughtPokemon.push(pokemon3);
-    } else {
-        poke3.encountered++;
-    }
+    // const poke2 = findById(caughtPokemon, pokemon2.id);
+    // if (poke2 === undefined) {
+    //     pokemon2.encountered = 1;
+    //     pokemon2.caught = 0;
+    //     caughtPokemon.push(pokemon2);
+    // } else {
+    //     poke2.encountered++;
+    // }
+
+    // const poke3 = findById(caughtPokemon, pokemon3.id);
+    // if (poke3 === undefined) {
+    //     pokemon3.encountered = 1;
+    //     pokemon3.caught = 0;
+    //     caughtPokemon.push(pokemon3);
+    // } else {
+    //     poke3.encountered++;
+    // }
 
 
 
